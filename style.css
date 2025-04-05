@@ -1,0 +1,987 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to top,#08355f,#00192b);
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #002a49;
+    justify-content: space-between;
+    display: flex;
+    z-index: 100;
+    font-size: 20px;
+    
+}
+
+.logo {
+    font-size: 30px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 700;
+    animation: slideInLeft 1s ease forwards;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #002a49;
+    animation: showRight 2.5s ease forwards;
+    animation-delay: .5s;
+}
+
+.navbar a {
+    font: 20px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    justify-content: end;
+    transition: .30s;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: calc(0.1s * var(--nav-item-index, 1));
+    opacity: 0;
+}
+
+.navbar a:nth-child(1) { --nav-item-index: 1; }
+.navbar a:nth-child(2) { --nav-item-index: 2; }
+.navbar a:nth-child(3) { --nav-item-index: 3; }
+
+.navbar a:hover,.navbar a.active  {
+    color: #008eca;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: wrap;
+    align-items: center;
+    padding: 0 10%;
+    /* Reduce top padding to bring content closer to navbar */
+    padding-top: 80px;
+}
+
+.content{
+    max-width: 780px;
+    animation: fadeInUp 1s ease forwards;
+    /* Add margin-top adjustment */
+    margin-top: -30px;
+} 
+
+.content h1{
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: 'Roboto', sans-serif;
+    animation: typeWriter 2s steps(30) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #00abf0;
+    width: 0;
+}
+
+.content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 3s ease forwards;
+    animation-delay: .5s;
+}
+
+.content h3{
+    position: relative;
+    font-size: 30px;
+    font-weight: 500;
+    color: #00abf0;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 4s ease forwards;
+    animation-delay: .5s;
+}
+.content p{
+    position: relative;
+    font-size: 20px;
+    margin: 20px 0 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 5s ease forwards;
+    animation-delay: .5s;
+}
+
+.content .btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height:50px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3s;
+}
+
+.content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 3s ease forwards;
+    animation-delay: 1.7s;
+    z-index: 2;
+}
+
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #00192b;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover{
+    color: #00abf0;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 171, 240, 0.4);
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+}
+
+.btn-box a:nth-child(2):before{
+    background: #00abf0;
+}
+
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00192b;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+}
+
+.sci{
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 3.5s;
+}
+
+.sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2s;
+    z-index: 2;
+}
+
+.sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .10s;
+}
+
+.sci a:hover{
+    background: transparent;
+    color: #00192b;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 171, 240, 0.4);
+}
+
+.sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .10s;
+}
+
+.sci a:hover::before{
+    width: 100%;
+}
+
+.sci a i {
+    animation: pulse 2s infinite;
+}
+
+.sci a:nth-child(1) i { animation-delay: 0s; }
+.sci a:nth-child(2) i { animation-delay: 0.5s; }
+.sci a:nth-child(3) i { animation-delay: 1s; }
+
+@media screen and (max-width: 1250px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -250px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -250px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -250px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -120px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -120px;
+    }
+}
+
+.column {
+    position: relative;
+    float: right;
+    width: 80%;
+    padding: 0 10px;
+    opacity: 0;
+    animation: fadeInRight 1s ease forwards;
+    animation-delay: 4s;
+  }
+
+  .column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 6s ease forwards;
+    animation-delay: .5s;
+}
+
+@media screen and (max-width: 1250px) {
+    .column {
+        width: 70%;
+        padding-left: 100px;
+
+    }
+    .home {
+    display: flex;
+     flex-direction: column;
+     max-width: 1250px;
+     /* Reduce top margin for better spacing */
+     margin-top: 40px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        max-width: 1150px;
+    }
+
+    .content h1{
+        font-size: 40px;
+    }
+  }
+
+@media screen and (max-width: 950px) {
+    .column {
+        width: 70%;
+        padding-left: 100px;
+
+    }
+    .home {
+    display: flex;
+     flex-direction: column;
+     max-width: 950px;
+     /* Reduce top margin for better spacing */
+     margin-top: 40px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+    }
+
+    .content h1{
+        font-size: 40px;
+    }
+  }
+
+@media screen and (max-width: 810px) {
+    .column {
+        width: 70%;
+        padding-left: 100px;
+
+    }
+    .home {
+    display: flex;
+     flex-direction: column;
+     max-width: 810px;
+     /* Reduce top margin for better spacing */
+     margin-top: 40px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        max-width: 750px;
+    }
+
+    .content h1{
+        font-size: 40px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .column {
+        width: 70%;
+        padding-right: 100px;
+    }
+    .home {
+    display: flex;
+     flex-direction: column;
+     max-width: 700px;
+     /* Reduce top margin for better spacing */
+     margin-top: 40px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        max-width: 650px;
+    }
+
+    .content h1{
+        font-size: 40px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .column {
+        width: 70%;
+        padding-right: 100px;
+    }
+    .home {
+    display: flex;
+     flex-direction: column;
+     max-width: 550px;
+     /* Reduce top margin for better spacing */
+     margin-top: 40px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        max-width: 650px;
+    }
+
+    .content h1{
+        font-size: 40px;
+    }
+  }
+
+.row {
+    margin: 0 -2px;
+    /* Reduce top margin for better spacing */
+    margin-top: 50px;
+}
+
+.row:after {
+    position: relative;
+    display: flex;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 6s ease forwards;
+    animation-delay: .5s;
+}
+
+@media screen and (max-width: 1250px) {
+    .row{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .row{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 810px){
+    .row{
+        margin-top: 30px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .row{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .row{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.card {
+    box-shadow: 5px 6px 5px 5px #00abf0;
+    padding: 10px;
+    border-radius: 10px;
+    gap: -1000px;
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 171, 240, 0.6);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 6s ease forwards;
+    animation-delay: .3s;
+}
+
+.img-fluid{
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.5s;
+    animation: floatImage 6s ease-in-out infinite;
+}
+
+.card:hover .img-fluid {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1250px){
+    .img-fluid{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+       }
+}
+
+@media screen and (max-width: 950px){
+    .img-fluid{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+       }
+}
+
+@media screen and (max-width: 810px){
+    .img-fluid{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+       }
+}
+
+@media screen and (max-width: 700px){
+   .img-fluid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+}
+
+@media screen and (max-width: 550px){
+   .img-fluid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 20px 5%;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .navbar a {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Fix content overflow issues */
+.content {
+  width: 100%;
+  max-width: 780px;
+  word-wrap: break-word;
+}
+
+/* Better image handling */
+.img-fluid {
+  max-width: 100%;
+  height: 95%;
+}
+
+/* Improved button box responsiveness */
+@media screen and (max-width: 400px) {
+  .content .btn-box {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+  }
+  
+  .btn-box a {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+/* Better handling of social media links */
+@media screen and (max-width: 550px) {
+  .sci {
+    position: relative;
+    margin-top: 30px;
+    bottom: auto;
+  }
+}
+
+/* Fix card overflow issues */
+.card {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Enhanced column handling for very small screens */
+@media screen and (max-width: 400px) {
+  .column {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .content h1 {
+    font-size: 32px;
+  }
+  
+  .content h3 {
+    font-size: 24px;
+  }
+  
+  .content p {
+    font-size: 16px;
+  }
+}
+
+/* Fix flex issues in home section for better stacking */
+@media screen and (max-width: 768px) {
+  .home {
+    /* Reduce padding to bring content closer to navbar */
+    padding: 70px 5% 50px;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* Incorporating additional responsive styles from index3.html */
+/* Better navbar font-size issue fix */
+.navbar a {
+    font-size: 20px;
+}
+
+/* Better header layout for small screens */
+@media screen and (max-width: 600px) {
+    .header {
+        padding: 15px 5%;
+        /* Keeping items side by side */
+        align-items: center;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+        font-size: 24px;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .navbar a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+}
+
+/* Fix content and image layout */
+@media screen and (max-width: 1250px) {
+    .home {
+        height: auto;
+        min-height: 100vh;
+        /* Reduce top padding to bring content closer to navbar */
+        padding-top: 70px;
+        padding-bottom: 50px;
+        justify-content: flex-start;
+    }
+    
+    .content {
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .row {
+        margin-top: 30px;
+    }
+    
+    .column {
+        float: none;
+        width: 100%;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+    
+    .card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .sci {
+        position: relative;
+        margin: 40px auto 0;
+        bottom: auto;
+    }
+}
+
+/* Better spacing for mobile */
+@media screen and (max-width: 550px) {
+    .content h1 {
+        font-size: 32px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    
+    .content h3 {
+        font-size: 25px;
+        line-height: 1.6;
+    }
+    .content p {
+        font-size: 17px;
+        line-height: 1.3;
+    }
+    
+    .btn-box {
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    .btn-box a {
+        width: 150px;
+    }
+    
+    .card {
+        padding: 10px;
+    }
+}
+
+/* Fix social media icons positioning */
+@media screen and (max-width: 1250px) {
+    .sci {
+        position: static;
+        margin: 40px auto 0;
+        width: 170px;
+    }
+}
+
+/* Improve photo card on all devices */
+.card {
+    position: relative;
+    overflow: hidden;
+    max-width: 400px;
+    margin-left: 400px;
+    margin: 0 auto;
+}
+
+/* Smooth transitions */
+.content h1, .content h3, .btn-box a, .navbar a {
+    transition: all 0.3s ease;
+}
+
+/* Fix image size for better proportion */
+@media screen and (max-width: 700px) {
+    .img-fluid {
+        border-radius: 8px;
+        max-height: 400px;
+    }
+}
+
+/* Added media query for very small screens */
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 12px 5%;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+        font-size: 22px;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .navbar a {
+        margin: 0 6px;
+        font-size: 13px;
+    }
+}
+
+/* Added Animation Keyframes */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes manipActiveHover{
+    100% {
+        pointer-events: auto;
+    }
+}
+
+/* New Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes typeWriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Added background animation */
+body {
+    background: linear-gradient(to top,#032e57,#00192b);
+    color: #ededed;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(#00abf0, transparent);
+    opacity: 0.05;
+    pointer-events: none;
+    animation: pulseBackground 8s infinite alternate;
+}
+
+@keyframes pulseBackground {
+    0% {
+        opacity: 0.03;
+    }
+    100% {
+        opacity: 0.08;
+    }
+}

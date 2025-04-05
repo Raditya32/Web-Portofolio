@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to top,#08355f,#00192b);
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #002a49;
+    justify-content: space-between;
+    display: flex;
+    z-index: 100;
+    font-size: 20px;
+}
+
+.logo {
+    font-size: 30px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #002a49;
+    animation: showRight 2.5s ease forwards;
+    animation-delay: .5s;
+}
+
+.navbar a {
+    font-size: 20px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    justify-content: end;
+    transition: .30s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #008eca;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 10% 40px;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Updated animation for h1 - removed blinkCursor and added gradientEffect */
+@keyframes typeWriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes gradientEffect {
+    0% { text-shadow: 0 0 5px rgba(0, 171, 240, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(0, 171, 240, 0.8); }
+    100% { text-shadow: 0 0 5px rgba(0, 171, 240, 0.5); }
+}
+
+.content h1 {
+    font-size: 33px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: 
+        typeWriter 2s steps(30) forwards,
+        gradientEffect 2s infinite 2s;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+.content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 3s ease forwards;
+    animation-delay: .5s;
+}
+
+h2 {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+}
+
+h2, a {
+    background: transparent;
+    color: #ededed;
+    text-decoration: none;
+}
+
+.text a:hover {
+    color: #008eca;
+}
+
+/* Updated row layout to make cards display horizontally */
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    width: calc(50% - 20px);
+    max-width: 400px;
+    padding: 0 15px;
+}
+
+/* UPDATED CARD ANIMATIONS START */
+@keyframes cardMagicEffect {
+    0% { transform: translateY(0) rotate(0deg); box-shadow: 0 0 10px 5px rgba(0, 171, 240, 0.5); }
+    25% { transform: translateY(-15px) rotate(1deg); box-shadow: 0 0 20px 8px rgba(0, 171, 240, 0.7); }
+    50% { transform: translateY(-10px) rotate(-1deg); box-shadow: 0 0 15px 10px rgba(0, 171, 240, 0.6); }
+    75% { transform: translateY(-15px) rotate(1deg); box-shadow: 0 0 20px 8px rgba(0, 171, 240, 0.7); }
+    100% { transform: translateY(0) rotate(0deg); box-shadow: 0 0 10px 5px rgba(0, 171, 240, 0.5); }
+}
+
+@keyframes cardBorderPulse {
+    0% { border-width: 0px; border-color: rgba(0, 171, 240, 0.2); }
+    50% { border-width: 3px; border-color: rgba(0, 171, 240, 0.8); }
+    100% { border-width: 0px; border-color: rgba(0, 171, 240, 0.2); }
+}
+
+@keyframes cardGlowRotate {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.card {
+    position: relative;
+    box-shadow: 0 0 10px 5px rgba(0, 171, 240, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.2, 0.85, 0.4, 1.5);
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
+    border: 0px solid rgba(0, 171, 240, 0.2);
+    background: linear-gradient(135deg, rgba(0, 171, 240, 0.1), rgba(0, 86, 121, 0.2));
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: rotate(0deg);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Removed problematic animations from card:hover */
+.card:hover {
+    box-shadow: 0 0 20px 8px rgba(0, 171, 240, 0.7);
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: cardGlowRotate 3s infinite linear;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+                rgba(0, 171, 240, 0) 0%, 
+                rgba(0, 171, 240, 0.1) 25%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                rgba(0, 171, 240, 0.1) 75%, 
+                rgba(0, 171, 240, 0) 100%);
+    background-size: 250% 250%;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    animation: cardGlowRotate 5s infinite linear;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+@keyframes imageWave {
+    0% { transform: scale(1) translateY(0); filter: brightness(1) contrast(1); }
+    50% { transform: scale(1.08) translateY(-5px); filter: brightness(1.1) contrast(1.05); }
+    100% { transform: scale(1) translateY(0); filter: brightness(1) contrast(1); }
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    transition: all 0.7s cubic-bezier(0.2, 0.85, 0.4, 1.5);
+    position: relative;
+    z-index: 0;
+}
+
+.card:hover .img-fluid {
+    animation: imageWave 3s ease infinite;
+}
+
+/* Shadow Animation */
+@keyframes shadowPulse {
+    0% { filter: drop-shadow(0 0 5px rgba(0, 171, 240, 0.5)); }
+    50% { filter: drop-shadow(0 0 15px rgba(0, 171, 240, 0.8)); }
+    100% { filter: drop-shadow(0 0 5px rgba(0, 171, 240, 0.5)); }
+}
+
+.card:hover .pic {
+    animation: shadowPulse 2s infinite;
+}
+
+/* 3D Perspective Effect for Column */
+.column {
+    perspective: 1500px;
+}
+
+/* Card Appear Animation */
+@keyframes cardAppear {
+    0% { 
+        opacity: 0;
+        transform: translateY(30px) rotateX(20deg);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    animation: cardAppear 1s ease forwards;
+}
+
+.row:nth-child(1) .card {
+    animation-delay: 2.5s;
+}
+
+.row:nth-child(2) .card {
+    animation-delay: 3s;
+}
+/* UPDATED CARD ANIMATIONS END */
+
+.sci {
+    position: absolute;
+    bottom: 10px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 3.5s;
+}
+
+.sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2s;
+    z-index: 2;
+}
+
+.sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .10s;
+}
+
+.sci a:hover {
+    background: transparent;
+    color: #00192b;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 171, 240, 0.4);
+}
+
+.sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .10s;
+}
+
+.sci a:hover::before {
+    width: 100%;
+}
+
+.sci a i {
+    animation: pulse 2s infinite;
+}
+
+.sci a:nth-child(1) i { animation-delay: 0s; }
+.sci a:nth-child(2) i { animation-delay: 0.5s; }
+.sci a:nth-child(3) i { animation-delay: 1s; }
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+/* Improved fadeIn animation for row elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Updated staggered animation for rows */
+.row:nth-child(1) {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 2.5s; /* Delay after h1 animation completes */
+}
+
+.row:nth-child(2) {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 3s; /* Slightly delayed from first row */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    .navbar a {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    
+    .content h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .home {
+        padding: 90px 5% 30px;
+    }
+
+    /* Make columns stack on smaller screens */
+    .column {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 12px 5%;
+        /* Remove flex-direction: column and align-items */
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+        font-size: 22px;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .navbar a {
+        font-size: 14px;
+        margin: 0 6px;
+    }
+    
+    .content h1 {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+    
+    .sci {
+        gap: 15px;
+    }
+    
+    .sci a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .home {
+        padding: 120px 5% 30px;
+    }
+}
+
+/* Add these animations to your existing style section */
+
+/* Animate navbar links with a subtle bounce effect */
+@keyframes navLinkBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.navbar a:hover {
+    animation: navLinkBounce 0.5s ease;
+}
+
+/* Add a fade-in effect for the content */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Add a pulse effect to social media icons */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.sci a:hover {
+    animation: pulse 0.8s infinite;
+}
+
+/* Add a shine effect to cards */
+@keyframes shine {
+    0% { background-position: -100px; }
+    40% { background-position: 140px; }
+    100% { background-position: 140px; }
+}
+
+/* Improve the card hover effect with a smoother transition */
+.card {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+}
+
+/* Add a subtle rotation to the logo for attention */
+@keyframes logoWiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.logo:hover {
+    animation: logoWiggle 0.5s ease-in-out;
+}
+
+/* Add an animated underline effect to h2 links */
+.text a {
+    position: relative;
+}
+
+.text a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #008eca;
+    transition: width 0.3s ease;
+}
+
+.text a:hover::after {
+    width: 100%;
+}
+
+/* Added better text reveal animation for h1 */
+@keyframes textReveal {
+    0% { 
+        opacity: 0;
+        transform: translateY(20px);
+        text-shadow: 0 0 0px rgba(0, 171, 240, 0);
+    }
+    30% {
+        opacity: 0.3;
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 15px rgba(0, 171, 240, 0.3);
+    }
+}
+
+.content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00abf0, transparent);
+    animation: lineGrow 2s ease-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+@keyframes lineGrow {
+    0% { 
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    100% { 
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Zoom out effect for images */
+@keyframes zoomOut {
+    0% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.img-fluid {
+    animation: zoomOut 1.5s ease-out forwards;
+}
