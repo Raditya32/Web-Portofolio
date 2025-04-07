@@ -114,6 +114,7 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
+            position: relative;
         }
 
         /* Carousel and Cards */
@@ -220,16 +221,17 @@
             filter: brightness(1.1);
         }
 
-        /* Social Media Icons */
+        /* Social Media Icons - Updated for better responsiveness */
         .sci {
-            position: absolute;
-            bottom: 40px;
             width: 170px;
             display: flex;
             justify-content: space-between;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
             animation-delay: 3.5s;
+            margin-top: 40px;
+            position: relative;
+            bottom: 0;
         }
 
         @keyframes fadeInUp {
@@ -352,10 +354,10 @@
 
         @media screen and (max-width: 576px) {
             .header {
-            padding: 15px 5%;
-        /* Keeping items side by side */
-            align-items: center;
-         }
+                padding: 15px 5%;
+                /* Keeping items side by side */
+                align-items: center;
+            }
     
             .logo {
                 margin-bottom: 0;
@@ -372,10 +374,11 @@
                 font-size: 14px;
             }
 
-            .sci{
-            position:absolute;
-            margin-bottom: -266px;
+            .sci {
+                width: 160px;
+                margin-top: 30px;
             }
+            
             .carousel {
                 grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
                 gap: 15px;
@@ -403,7 +406,7 @@
             }
 
             .header {
-            padding: 12px 5%;
+                padding: 12px 5%;
             }
             
             .logo {
@@ -420,6 +423,17 @@
                 margin: 0 6px;
                 font-size: 13px;
             }
+            
+            .sci {
+                width: 150px;
+                margin-top: 25px;
+            }
+            
+            .sci a {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
         }
 
         @media screen and (max-width: 360px) {
@@ -433,7 +447,7 @@
             }
             
             .header {
-            padding: 12px 5%;
+                padding: 12px 5%;
             }
     
             .logo {
@@ -456,9 +470,15 @@
                 margin-top: 20px;
             }
 
-            .sci{
-            position: fixed;
-            margin-bottom: -20px;
+            .sci {
+                width: 140px;
+                margin-top: 20px;
+            }
+            
+            .sci a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
         }
 
