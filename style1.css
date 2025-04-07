@@ -221,17 +221,16 @@
             filter: brightness(1.1);
         }
 
-        /* Social Media Icons - Updated for better responsiveness */
+        /* Social Media Icons - Enhanced for better responsiveness */
         .sci {
+            position: absolute;
+            bottom: 40px;
             width: 170px;
             display: flex;
             justify-content: space-between;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
             animation-delay: 3.5s;
-            margin-top: 40px;
-            position: relative;
-            bottom: 0;
         }
 
         @keyframes fadeInUp {
@@ -318,6 +317,43 @@
         .sci a:nth-child(1) i { animation-delay: 0s; }
         .sci a:nth-child(2) i { animation-delay: 0.5s; }
         .sci a:nth-child(3) i { animation-delay: 1s; }
+
+        /* Responsive styles for .sci class from style.css */
+        @media screen and (max-width: 1250px) {
+            .sci {
+                position: static;
+                margin: 40px auto 0;
+            }
+        }
+
+        @media screen and (max-width: 950px) {
+            .sci {
+                position: static;
+                margin: 40px auto 0;
+            }
+        }
+
+        @media screen and (max-width: 810px) {
+            .sci {
+                position: static;
+                margin: 40px auto 0;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .sci {
+                position: static;
+                margin: 40px auto 0;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .sci {
+                position: relative;
+                margin-top: 30px;
+                bottom: auto;
+            }
+        }
 
         /* Responsive Styles */
         @media screen and (max-width: 1200px) {
@@ -479,6 +515,57 @@
                 width: 40px;
                 height: 40px;
                 font-size: 16px;
+            }
+        }
+
+        /* Tambahan untuk responsivitas class .sci dalam orientasi landscape */
+        @media screen and (orientation: landscape) {
+            .sci {
+                display: flex;
+                justify-content: center;
+                width: auto;
+                max-width: 250px;
+                margin: 30px auto 0;
+                gap: 15px;
+            }
+            
+            .sci a {
+                /* Mempertahankan ukuran yang baik untuk landscape */
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
+        /* Responsif untuk layar kecil dalam orientasi landscape (misalnya smartphone dalam posisi landscape) */
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+            .sci {
+                margin-top: 15px;
+                gap: 10px;
+            }
+            
+            .sci a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        /* Responsif untuk perangkat dengan layar sangat kecil dalam mode landscape */
+        @media screen and (orientation: landscape) and (max-height: 400px) {
+            .sci {
+                margin-top: 10px;
+                gap: 8px;
+                flex-direction: row;
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .sci a {
+                width: 35px;
+                height: 35px;
+                font-size: 15px;
             }
         }
 
