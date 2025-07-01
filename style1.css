@@ -78,7 +78,7 @@
             animation: typeWriter 2s steps(30) forwards;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 3px solid #00abf0;
+            border-right: 3px solid #008eca;
             width: 0;
         }
 
@@ -121,7 +121,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 30px;
-            color: #00abf0;
+            color: #ededed;
         }
 
         /* Carousel and Cards */
