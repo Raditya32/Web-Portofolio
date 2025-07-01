@@ -117,6 +117,13 @@
             position: relative;
         }
 
+        .content h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00abf0;
+        }
+
         /* Carousel and Cards */
         .carousel {
             display: grid;
@@ -177,9 +184,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 5px 6px 5px 5px #00abf0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             opacity: 0;
             animation: cardAppear 1s ease forwards;
+            padding-bottom: 15px;
         }
 
         @keyframes cardAppear {
@@ -221,6 +231,13 @@
             filter: brightness(1.1);
         }
 
+        .card p {
+            margin: 10px 0 0 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #00abf0;
+            text-align: center;
+        }
         /* Social Media Icons - Enhanced for better responsiveness */
         .sci {
             position: absolute;
