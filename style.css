@@ -225,6 +225,23 @@ body {
     width: 100%;
 }
 
+.add {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00abf0;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 171, 240, 0.3);
+    position: absolute;
+    bottom: 100px;
+    left: 10.5%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 3s;
+}
+
 .sci{
     position: absolute;
     bottom: 40px;
@@ -298,10 +315,41 @@ body {
 .sci a:nth-child(2) i { animation-delay: 0.5s; }
 .sci a:nth-child(3) i { animation-delay: 1s; }
 
+/* Keyframes untuk animasi */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes showRight {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 @media screen and (max-width: 1250px) {
-    .sci{
-        position: absolute;
-        margin-bottom: -250px;
+    .add {
+        bottom: 120px;
+        left: 45%;
+        font-size: 1.4rem;
     }
 }
 
@@ -310,12 +358,22 @@ body {
         position: absolute;
         margin-bottom: -250px;
     }
+    .add {
+        bottom: 120px;
+        left: 43%;
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 810px) {
     .sci{
         position: absolute;
         margin-bottom: -250px;
+    }
+    .add {
+        bottom: 120px;
+        left: 42%;
+        font-size: 1.4rem;
     }
 }
 
@@ -324,12 +382,60 @@ body {
         position: absolute;
         margin-bottom: -120px;
     }
+    .add {
+        bottom: 120px;
+        left: 41%;
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 550px) {
     .sci{
         position: absolute;
         margin-bottom: -120px;
+    }
+    .add {
+        bottom: 120px;
+        left: 38%;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -120px;
+        width: 150px;
+    }
+    .add {
+        bottom: 120px;
+        left: 36%;
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+    .sci a {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -120px;
+        width: 130px;
+    }
+    .add {
+        bottom: 110px;
+        left: 32%;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    .sci a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }
 
@@ -818,7 +924,7 @@ body {
 @media screen and (max-width: 1250px) {
     .sci {
         position: static;
-        margin: 40px auto 0;
+        margin: 100px auto 0;
         width: 170px;
     }
 }

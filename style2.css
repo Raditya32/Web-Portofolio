@@ -293,7 +293,22 @@ h2, a {
     animation-delay: 3s;
 }
 /* UPDATED CARD ANIMATIONS END */
-
+.add {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00abf0;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 171, 240, 0.3);
+    position: absolute;
+    bottom: 100px;
+    left: 46%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 3s;
+}
 .sci {
     position: absolute;
     bottom: 10px;
@@ -382,6 +397,92 @@ h2, a {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .add {
+        bottom: 80px;
+        left: 45%;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .add {
+        bottom: 80px;
+        left: 43%;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .add {
+        bottom: 80px;
+        left: 42%;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -40px;
+    }
+    .add {
+        bottom: 30px;
+        left: 41%;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -40px;
+    }
+    .add {
+        bottom: 40px;
+        left: 38%;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -40px;
+        width: 150px;
+    }
+    .add {
+        bottom: 10px;
+        left: 36%;
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+    .sci a {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .sci{
+        position: absolute;
+        margin-bottom: -30px;
+        width: 130px;
+    }
+    .add {
+        bottom: 30px;
+        left: 32%;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    .sci a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }
 
