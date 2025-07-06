@@ -47,7 +47,7 @@ body {
 .navbar {
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 10px;
     }
 
     .navbar a {
@@ -582,9 +582,9 @@ h2, a {
             }
 
             .navbar a {
-                margin: 8px 0;
-                font-size: 13px;
-                padding: 10px 20px;
+                margin: 7px 0;
+                font-size: 10px;
+                padding: 6px 10px;
                 display: block;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
@@ -673,9 +673,9 @@ h2, a {
             }
 
             .navbar a {
-                margin: 8px 0;
-                font-size: 13px;
-                padding: 10px 20px;
+                margin: 7px 0;
+                font-size: 10px;
+                padding: 6px 10px;
                 display: block;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
@@ -776,8 +776,8 @@ h2, a {
 
             .navbar a {
                 margin: 8px 0;
-                font-size: 13px;
-                padding: 10px 20px;
+                font-size: 10px;
+                padding: 6px 10px;
                 display: block;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
