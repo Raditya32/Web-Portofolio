@@ -46,7 +46,28 @@ body {
     animation-delay: .5s;
 }
 
-.navbar a {
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #4FC3F7;
+        }
+
+.nav-links a {
     font: 20px;
     color: #ededed;
     text-decoration: none;
@@ -59,11 +80,11 @@ body {
     opacity: 0;
 }
 
-.navbar a:nth-child(1) { --nav-item-index: 1; }
-.navbar a:nth-child(2) { --nav-item-index: 2; }
-.navbar a:nth-child(3) { --nav-item-index: 3; }
+.nav-links a:nth-child(1) { --nav-item-index: 1; }
+.nav-links a:nth-child(2) { --nav-item-index: 2; }
+.nav-links a:nth-child(3) { --nav-item-index: 3; }
 
-.navbar a:hover,.navbar a.active  {
+.nav-links a:hover,.nav-links a.active  {
     color: #008eca;
 }
 
@@ -758,7 +779,7 @@ body {
     font-size: 24px;
   }
   
-  .navbar a {
+  .nav-links a {
     margin-left: 10px;
     font-size: 16px;
   }
@@ -839,7 +860,7 @@ body {
 
 /* Incorporating additional responsive styles from index3.html */
 /* Better navbar font-size issue fix */
-.navbar a {
+.nav-links a {
     font-size: 20px;
 }
 
@@ -856,12 +877,12 @@ body {
         font-size: 24px;
     }
     
-    .navbar {
+    .nav-links {
         display: flex;
         justify-content: flex-end;
     }
     
-    .navbar a {
+    .nav-links a {
         margin: 0 8px;
         font-size: 14px;
     }
@@ -956,7 +977,7 @@ body {
 }
 
 /* Smooth transitions */
-.content h1, .content h3, .btn-box a, .navbar a {
+.content h1, .content h3, .btn-box a, .nav-links a {
     transition: all 0.3s ease;
 }
 
