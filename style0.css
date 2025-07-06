@@ -67,6 +67,23 @@ body {
     color: #008eca;
 }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
 .home {
     height: 100vh;
     display: flex;
@@ -962,15 +979,64 @@ body {
         font-size: 22px;
     }
     
-    .navbar {
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .navbar a {
-        margin: 0 6px;
-        font-size: 13px;
-    }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            .hamburger {
+                display: flex;
+                order: 1;
+            }
+
+            .navbar .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(30, 60, 114, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 1000;
+            }
+
+            .navbar .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .navbar a {
+                margin: 8px 0;
+                font-size: 13px;
+                padding: 10px 20px;
+                display: block;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar a:last-child {
+                border-bottom: none;
+            }
+
+            /* Hamburger Animation */
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
 }
 
 /* Added Animation Keyframes */
