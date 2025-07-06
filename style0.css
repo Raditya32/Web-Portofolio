@@ -50,7 +50,6 @@ body {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
     }
 
     .navbar a {
@@ -64,7 +63,7 @@ body {
 
         .navbar a:hover,
         .navbar a.active {
-            color: #4FC3F7;
+            color: #008eca;
         }
 
 .nav-links a {
@@ -1017,7 +1016,7 @@ body {
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(30, 60, 114, 0.95);
+                background: linear-gradient(to top,#08355f,#00192b);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 padding: 20px 0;

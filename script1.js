@@ -230,3 +230,36 @@ document.addEventListener("DOMContentLoaded", function () {
   // Check on scroll
   window.addEventListener("scroll", checkScroll);
 });
+
+document.addEventListener("DOMContentLoaded", addThemeToggle);
+
+function toggleMenu() {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+}
+
+// Close menu when clicking on a link
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  const navbar = document.querySelector(".navbar");
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (!navbar.contains(e.target)) {
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
+  }
+});
