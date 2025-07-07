@@ -67,12 +67,11 @@ body {
         }
 
 .nav-links a {
-    font: 15px;
+    font: 10px;
     color: #ededed;
     text-decoration: none;
-    font-weight: 450;
+    font-weight: 350;
     margin-left: 22px;
-    justify-content: end;
     transition: .30s;
     animation: fadeIn 1.5s ease forwards;
     animation-delay: calc(0.1s * var(--nav-item-index, 1));
