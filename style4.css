@@ -66,11 +66,11 @@ body {
 
 
 .nav-links a {
-    font-size: 20px;
+    font: 15px;
     color: #ededed;
     text-decoration: none;
-    font-weight: 500;
-    margin-left: 20px;
+    font-weight: 450;
+    margin-left: 22px;
     justify-content: end;
     transition: .30s;
 }
