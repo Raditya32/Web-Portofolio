@@ -9,7 +9,7 @@
 
 body {
     background: linear-gradient(to top,#08355f,#00192b);
-    color: #ffff;
+    color: #ededed;
 }
 
 .header {
@@ -101,7 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 150px 0 50px;
+    padding: 150px 0 150px;
     position: relative;
 }
 
@@ -153,7 +153,7 @@ body {
 
 h2 {
     text-align: center;
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 550;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 15px;
@@ -330,7 +330,7 @@ h2, a {
 .row:nth-child(2) .card {
     animation-delay: 3s;
 }
-
+/* UPDATED CARD ANIMATIONS END */
 
 .btn-box{
     position: relative;
@@ -407,7 +407,20 @@ h2, a {
 }
 
 
-/* UPDATED CARD ANIMATIONS END */
+
+
+.desc{
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 350;
+    letter-spacing: 1px;
+    padding: 10px;
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+}
+
 .add {
     font-size: 1.5rem;
     font-weight: bold;
